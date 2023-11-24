@@ -1,0 +1,17 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: 'Filament API'
+paths:
+  /api/Filament:
+    get:
+      summary: 'Get all filaments'
+      responses:
+        '200':
+          description: 'Successful operation'
+    parameters:
+      - in: 'query'
+        name: 'id'
+        required: false
+        type: 'string'
+        description: 'ID of the filament to retrieve'
