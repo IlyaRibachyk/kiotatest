@@ -1,20 +1,11 @@
-# Use the official Microsoft Azure Functions Python image
-FROM mcr.microsoft.com/azure-functions/node:3.0
+# To enable ssh & remote debugging on app service change the base image to the one below
+# FROM mcr.microsoft.com/azure-functions/node:4-node18-appservice
+FROM mcr.microsoft.com/azure-functions/node:4-node18
 
-# Set the working directory
-WORKDIR /home/site/wwwroot
+ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
+    AzureFunctionsJobHost__Logging__Console__IsEnabled=true
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+COPY . /home/site/wwwroot
 
-# Install dependencies
-RUN npm install
-
-# Copy local code to the container image
-COPY . .
-
-# Expose port
-EXPOSE 7071
-
-# Start the Azure Functions host
-CMD func start
+RUN cd /home/site/wwwroot && \
+    npm install
