@@ -1,9 +1,20 @@
 version: '3.4'
 services:
-  azvure-function:
-    image: my-azure-function
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    ports:
+      - 80:80 
+  func:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "7071:7071"
+      - "7071:80"
+    environment:
+      - FUNCTIONS_WORKER_RUNTIME=node
+      - TABLES_URL=http://127.0.0.1:10002
+      - ACCOUNT_NAME=devstoreaccount1
+      - ACCOUNT_KEY=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
+      - CONNECTION_STRING="DefaultEndpointsProtocol=https;AccountName=printtest42;AccountKey=A1BSfbCKgE1UOghuuHUUH/13Q1BxyNxh0cNK/RPlb/g3qVnsZyN9eIKSB4qe93xeuXlsD/5wh+C5+AStMt0GXg==;EndpointSuffix=core.windows.net"

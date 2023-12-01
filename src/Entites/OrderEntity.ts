@@ -1,5 +1,5 @@
 import BaseEntity from "./baseEntity";
-import { OrderModel } from "../types/OrderModel";
+import { OrderModel } from "../types/OrderModel"; 
 
 export default class OrderEntity extends BaseEntity<OrderModel> {
     constructor() {

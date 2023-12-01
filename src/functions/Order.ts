@@ -4,7 +4,7 @@ import {
     HttpResponseInit, 
     InvocationContext 
 } from "@azure/functions";
-import OrderEntity from "../Entites/orderEntity";
+import OrderEntity from "../Entites/OrderEntity";
 import { OrderModel } from "../types/OrderModel";
 import { BaseFunction } from "./baseFunction";
 
