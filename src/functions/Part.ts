@@ -1,6 +1,6 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import PartEntity from "../Entites/partEntity";
-import { BaseFunction } from "./baseFunction";
+import PartEntity from "../entites/partEntity";
+import { BaseFunction } from "../services/baseFunction";
 import PartModel from "../types/PartModel";
 
 export async function Part(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {

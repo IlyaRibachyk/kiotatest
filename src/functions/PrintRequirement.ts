@@ -1,6 +1,6 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import PrintRequirementEntity from "../Entites/printRequirementEntity";
-import { BaseFunction } from "./baseFunction";
+import PrintRequirementEntity from "../entites/printRequirementEntity";
+import { BaseFunction } from "../services/baseFunction";
 import {PrintRequirementModel} from "../types/PrintRequirementModel";
 
 export async function PrintRequirement(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {

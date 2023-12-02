@@ -1,6 +1,6 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import FilamentBoxEntity from "../Entites/filamentBoxEntity";
-import {BaseFunction} from "./baseFunction";
+import FilamentBoxEntity from "../entites/filamentBoxEntity";
+import {BaseFunction} from "../services/baseFunction";
 import {FilamentBoxModel} from "../types/FilamentBoxModel";
 
 export async function FilamentBox(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {

@@ -1,6 +1,6 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import DeliveryBoxPartsInfoEntity from "../Entites/deliveryBoxPartsInfoEntity";
-import { BaseFunction } from "./baseFunction";
+import DeliveryBoxPartsInfoEntity from "../entites/deliveryBoxPartsInfoEntity";
+import { BaseFunction } from "../services/baseFunction";
 import { DeliveryBoxPartsInfoModel } from "../types/DeliveryBoxPartsInfoModel";
 
 export async function DeliveryBoxPartsInfo(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {

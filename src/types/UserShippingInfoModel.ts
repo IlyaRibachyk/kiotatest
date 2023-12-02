@@ -1,6 +1,6 @@
 import BaseModel from "./BaseModel";
 
-export default interface userShippingInfo extends BaseModel {
+export default interface UserShippingInfoModel extends BaseModel {
     userID: string;
     apiKey: string;
     city: string;

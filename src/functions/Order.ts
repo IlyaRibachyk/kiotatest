@@ -4,9 +4,9 @@ import {
     HttpResponseInit, 
     InvocationContext 
 } from "@azure/functions";
-import OrderEntity from "../Entites/OrderEntity";
+import OrderEntity from "../entites/OrderEntity";
 import { OrderModel } from "../types/OrderModel";
-import { BaseFunction } from "./baseFunction";
+import { BaseFunction } from "../services/baseFunction";
 
 export async function Order(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     const entity = new OrderEntity();

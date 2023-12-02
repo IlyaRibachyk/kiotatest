@@ -1,6 +1,6 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import OrderPartEntity from "../Entites/orderPartEntity";
-import { BaseFunction } from "./baseFunction";
+import OrderPartEntity from "../entites/orderPartEntity";
+import { BaseFunction } from "../services/baseFunction";
 import { OrderPartModel } from "../types/OrderPartModel";
 
 export async function OrderPart(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {

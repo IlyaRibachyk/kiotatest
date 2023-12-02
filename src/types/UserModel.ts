@@ -1,5 +1,5 @@
 import BaseModel from "./BaseModel";
-import UserShippingInfo from "./UserShippingInfo";
+import UserShippingInfo from "./UserShippingInfoModel";
 
 export interface UserModel extends BaseModel {
     userShippingInfo: UserShippingInfo;

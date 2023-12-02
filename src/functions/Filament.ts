@@ -4,9 +4,9 @@ import {
     HttpResponseInit,
     InvocationContext
 } from "@azure/functions";
-import FilamentEntity from "../Entites/filamentEntity";
+import FilamentEntity from "../entites/filamentEntity";
 import {FilamentModel} from "../types/FilamentModel";
-import {BaseFunction} from "./baseFunction";
+import {BaseFunction} from "../services/baseFunction";
 
 export async function Filament(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     const entity = new FilamentEntity();
