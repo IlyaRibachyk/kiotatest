@@ -3,6 +3,6 @@ import BaseEntity from "./baseEntity";
 
 export default class FilamentEntity extends BaseEntity<FilamentModel> {
     constructor() {
-        super("Filaments");
+        super("filaments");
     }
 }
