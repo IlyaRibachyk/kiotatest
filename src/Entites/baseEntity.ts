@@ -1,29 +1,33 @@
-import { 
-    TableServiceClient, 
+import {  
     TableClient, 
-    AzureNamedKeyCredential, 
-    odata, 
+    AzureNamedKeyCredential,
     TableUpdateEntityHeaders
 } from "@azure/data-tables";
 import * as dotenv from "dotenv";
-import { IBaseEntity } from "./IBaseEntity";
 import generateUUID from "../utils/generateUUID";
 dotenv.config();
 
 export default class BaseEntity<T> {
 
-    connectionString: string = process.env["CONNECTION_STRING"] || "";
+    connectionString: string = process.env["AzureWebJobsStorage"];
+    account: string = process.env["ACCOUNT_NAME"];
+    accountKey: string = process.env["ACCOUNT_KEY"];
+    tableUrl: string = process.env["TABLES_URL"];
     client: TableClient;
     defaultPartitionKey: string;
 
     constructor(tableName: string) {
-        this.client = TableClient.fromConnectionString(
-            this.connectionString, tableName, {allowInsecureConnection: true});
-            this.defaultPartitionKey = tableName;
+        this.defaultPartitionKey = tableName;
+        const credential = new AzureNamedKeyCredential(this.account, this.accountKey);
+        this.client = new TableClient(this.tableUrl, tableName, credential, {allowInsecureConnection: true});
+        this.client.createTable();
     }
 
     async initEnvirement() {
-       await this.client.createTable();
+        const tableName = this.defaultPartitionKey || "BigTable";
+        const credential = new AzureNamedKeyCredential(this.account, this.accountKey);
+        this.client = new TableClient(this.tableUrl, tableName, credential, {allowInsecureConnection: true});    
+        await this.client.createTable();
     }
 
     async get(id: string): Promise<T> {

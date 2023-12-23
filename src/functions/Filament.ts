@@ -10,8 +10,13 @@ import {BaseFunction} from "../services/baseFunction";
 
 export async function Filament(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     const entity = new FilamentEntity();
-    const { body, status } = await BaseFunction<FilamentModel>(entity, request);
-    return { body, status };
+    try {
+        const { body, status } = await BaseFunction<FilamentModel>(entity, request);
+        return { body, status };
+    } catch (err) {
+        context.error(err);
+        throw err;
+    }
 }
 
 app.http('Filament', {

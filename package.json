@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@azure/data-tables": "13.2.2",
-    "@azure/functions": "^4.0.0",
+    "@azure/functions": "^4.1.0",
     "crypto": "^1.0.1",
     "dotenv": "^16.3.1",
     "uuid": "^9.0.1",

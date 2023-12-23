@@ -6,8 +6,7 @@ export interface BaseFunctionResponce {
 }
 
 export async function BaseFunction<T>(entity: any, request: HttpRequest): Promise<BaseFunctionResponce> {
-    await entity.initEnvirement();
-
+    
     const id = request.query.get('id') || '';
     let body: string;
     let status: number = 200;

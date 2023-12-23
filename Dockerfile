@@ -1,13 +1,14 @@
-# To enable ssh & remote debugging on app service change the base image to the one below
-# FROM mcr.microsoft.com/azure-functions/node:4-node18-appservice
 FROM mcr.microsoft.com/azure-functions/node:4-node18
-
-ENV AzureWebJobsScriptRoot=/home/site/wwwroot/dist \
-    AzureFunctionsJobHost__Logging__Console__IsEnabled=true
-
+ 
+WORKDIR /home/site/wwwroot
+ 
+ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
+    AzureFunctionsJobHost__Logging__Console__IsEnabled=true \
+    AzureWebJobsFeatureFlags=EnableWorkerIndexing \
+    FUNCTIONS_WORKER_RUNTIME=node
 
 COPY . /home/site/wwwroot
 
-RUN cd /home/site/wwwroot && \
-    npm install && \ 
-    npm run prestart
+RUN npm ci && \
+    npm run clean && \
+    npm run build
