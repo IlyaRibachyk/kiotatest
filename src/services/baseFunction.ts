@@ -7,7 +7,7 @@ export interface BaseFunctionResponce {
 
 export async function BaseFunction<T>(entity: any, request: HttpRequest): Promise<BaseFunctionResponce> {
     
-    const id = request.query.get('id') || '';
+    const id = request.params.id || '';
     let body: string;
     let status: number = 200;
     switch (request.method) {
@@ -16,11 +16,12 @@ export async function BaseFunction<T>(entity: any, request: HttpRequest): Promis
             const filament: T = JSON.parse(bodyResponse);
             await entity.insert(filament);
             body = JSON.stringify(filament);
+            status = 201;
             break;
         }
         case 'GET': {
             try {
-                if (request.query && id !== '') {
+                if (request.params && id !== '') {
                     const data = await entity.get(id);
                     body = JSON.stringify(data);
                 } else {

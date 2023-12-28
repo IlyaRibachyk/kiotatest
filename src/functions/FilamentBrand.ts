@@ -2,11 +2,11 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
 import FilamentBrandEntity from "../entites/filamentBrandEntity";
 import { BaseFunction } from "../services/baseFunction";
-import { DeliveryBoxPartsInfoModel } from "../types/DeliveryBoxPartsInfoModel";
+import { FilamentBrandModel } from "../types/FilamentBrandModel";
 
 export async function FilamentBrand(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     const entity = new FilamentBrandEntity();
-    const { body, status } = await BaseFunction<DeliveryBoxPartsInfoModel>(entity, request);
+    const { body, status } = await BaseFunction<FilamentBrandModel>(entity, request);
     return { body, status };
 };
 
