@@ -1,9 +1,6 @@
 openapi: 3.0.0
 servers:
   # Added by API Auto Mocking Plugin
-  # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/Drakonoffnet/data-api/1.0.0
   - description: API
     url: http://localhost:7071/api
 info:
@@ -53,13 +50,13 @@ paths:
       responses:
         '201':
           description: Created
-  /filament/{id}:
+  /filament?id={id}:
     get:
       tags:
         - filament
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -76,7 +73,7 @@ paths:
         - filament
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -97,7 +94,7 @@ paths:
         - filament
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -132,13 +129,13 @@ paths:
       responses:
         '201':
           description: Created
-  /DeliveryBoxPartsInfo/{id}:
+  /DeliveryBoxPartsInfo?id={id}:
     get:
       tags:
         - DeliveryBox
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -155,7 +152,7 @@ paths:
         - DeliveryBox
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -174,7 +171,7 @@ paths:
         - DeliveryBox
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -209,13 +206,13 @@ paths:
       responses:
         '201':
           description: Created
-  /FilamentBox/{id}:
+  /FilamentBox?id={id}:
     get:
       tags:
         - filament
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -232,7 +229,7 @@ paths:
         - filament
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -251,7 +248,7 @@ paths:
         - filament
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -286,13 +283,13 @@ paths:
       responses:
         '201':
           description: Created
-  /FilamentBrand/{id}:
+  /FilamentBrand?id={id}:
     get:
       tags:
         - filament
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -309,7 +306,7 @@ paths:
         - filament
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -328,7 +325,7 @@ paths:
         - filament
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -363,13 +360,13 @@ paths:
       responses:
         '201':
           description: Created
-  /Order/{id}:
+  /Order?id={id}:
     get:
       tags:
         - order
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -386,7 +383,7 @@ paths:
         - order
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -405,7 +402,7 @@ paths:
         - order
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -441,13 +438,13 @@ paths:
       responses:
         '201':
           description: Created
-  /OrderPart/{id}:
+  /OrderPart?id={id}:
     get:
       tags:
         - order
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -464,7 +461,7 @@ paths:
         - order
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -483,7 +480,7 @@ paths:
         - order
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -519,13 +516,13 @@ paths:
       responses:
         '201':
           description: Created
-  /Part/{id}:
+  /Part?id={id}:
     get:
       tags:
         - part
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -542,7 +539,7 @@ paths:
         - part
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -561,7 +558,7 @@ paths:
         - part
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -597,13 +594,13 @@ paths:
       responses:
         '201':
           description: Created
-  /PartItem/{id}:
+  /PartItem?id={id}:
     get:
       tags:
         - part
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -620,7 +617,7 @@ paths:
         - part
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -639,7 +636,7 @@ paths:
         - part
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -675,13 +672,13 @@ paths:
       responses:
         '201':
           description: Created
-  /PrintRequirement/{id}:
+  /PrintRequirement?id={id}:
     get:
       tags:
         - print
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -698,7 +695,7 @@ paths:
         - print
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -717,7 +714,7 @@ paths:
         - print
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -753,13 +750,13 @@ paths:
       responses:
         '201':
           description: Created
-  /Users/{id}:
+  /Users?id={id}:
     get:
       tags:
         - user
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -776,7 +773,7 @@ paths:
         - user
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -795,7 +792,7 @@ paths:
         - user
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -831,13 +828,13 @@ paths:
       responses:
         '201':
           description: Created
-  /UserShippingInfo/{id}:
+  /UserShippingInfo?id={id}:
     get:
       tags:
         - user
       summary: Get by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -854,7 +851,7 @@ paths:
         - user
       summary: Update by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:
@@ -873,7 +870,7 @@ paths:
         - user
       summary: Delete by ID
       parameters:
-        - in: path
+        - in: query
           name: id
           required: true
           schema:

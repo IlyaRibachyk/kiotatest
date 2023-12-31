@@ -7,7 +7,7 @@ export interface BaseFunctionResponce {
 
 export async function BaseFunction<T>(entity: any, request: HttpRequest): Promise<BaseFunctionResponce> {
     
-    const id = request.params.id || '';
+    const id = request.query.get('id') || '';
     let body: string;
     let status: number = 200;
     switch (request.method) {

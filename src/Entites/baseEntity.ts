@@ -8,8 +8,6 @@ import generateUUID from "../utils/generateUUID";
 dotenv.config();
 
 export default class BaseEntity<T> {
-
-    connectionString: string = process.env["AzureWebJobsStorage"];
     account: string = process.env["ACCOUNT_NAME"];
     accountKey: string = process.env["ACCOUNT_KEY"];
     tableUrl: string = process.env["TABLES_URL"];
