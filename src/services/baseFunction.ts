@@ -22,10 +22,10 @@ export async function BaseFunction<T>(entity: any, request: HttpRequest): Promis
         case 'GET': {
             try {
                 if (request.params && id !== '') {
-                    const data = await entity.get(id);
+                    const data: T = await entity.get(id);
                     body = JSON.stringify(data);
                 } else {
-                    const data = await entity.getAll();
+                    const data: Array<T> = await entity.getAll();
                     body = JSON.stringify(data);
                 }
             } catch (error) {

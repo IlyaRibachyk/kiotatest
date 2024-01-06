@@ -5,6 +5,7 @@ import {
 } from "@azure/data-tables";
 import * as dotenv from "dotenv";
 import generateUUID from "../utils/generateUUID";
+import extractToTimestamp from "../utils/extractToTimestamp";
 dotenv.config();
 
 export default class BaseEntity<T> {
@@ -29,14 +30,22 @@ export default class BaseEntity<T> {
     }
 
     async get(id: string): Promise<T> {
-        return this.client.getEntity(this.defaultPartitionKey, id) as Promise<T>;
+        const data = this.client.getEntity(this.defaultPartitionKey, id) as Promise<T>;
+        data['id'] = data['rowKey'];
+        data['timestamp'] = extractToTimestamp(data['etag']);
+        delete data['rowKey'];
+        return data;
     }
 
     async filterBy(options: any): Promise<T[]> {
         const entities = await this.client.listEntities(options);
         const items: T[] = [];
         for await (const entity of entities) {
-            items.push(entity as unknown as T);
+            const item = entity as unknown as T;
+            item['id'] = entity['rowKey'];
+            item['timestamp'] = extractToTimestamp(item['etag']);
+            delete item['rowKey'];
+            items.push(item);
         }
         return Promise.resolve(items);
     }
@@ -45,7 +54,11 @@ export default class BaseEntity<T> {
         const entities = await this.client.listEntities();
         const items: T[] = [];
         for await (const entity of entities) {
-            items.push(entity as unknown as T);
+            const item = entity as unknown as T;
+            item['id'] = entity['rowKey'];
+            item['timestamp'] = extractToTimestamp(item['etag']);
+            delete item['rowKey'];
+            items.push(item);
         }
         return Promise.resolve(items);
     }
