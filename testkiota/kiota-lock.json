@@ -1,0 +1,56 @@
+{
+  "descriptionHash": "59223898CB8AC3D36BC6BBFF78FBF4B9FA368C220F371157B7B5FC6E6CBF351C9424C91F5F6007C5D05DACDB9B3F769847C4F6E49DDD41E19A3B3A8B9294C278",
+  "descriptionLocation": "..\\docs\\openapi3.0.yml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.11.1",
+  "clientClassName": "Client",
+  "clientNamespaceName": "TestKiota",
+  "language": "TypeScript",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "serializers": [
+    "@microsoft/kiota-serialization-form.FormSerializationWriterFactory",
+    "@microsoft/kiota-serialization-json.JsonSerializationWriterFactory",
+    "@microsoft/kiota-serialization-text.TextSerializationWriterFactory",
+    "@microsoft/kiota-serialization-multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "@microsoft/kiota-serialization-form.FormParseNodeFactory",
+    "@microsoft/kiota-serialization-json.JsonParseNodeFactory",
+    "@microsoft/kiota-serialization-text.TextParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [
+    "/",
+    "/DeliveryBoxPartsInfo",
+    "/DeliveryBoxPartsInfo?id={id}",
+    "/filament",
+    "/filament?id={id}",
+    "/FilamentBox",
+    "/FilamentBox?id={id}",
+    "/FilamentBrand",
+    "/FilamentBrand?id={id}",
+    "/Order",
+    "/Order?id={id}",
+    "/OrderPart",
+    "/OrderPart?id={id}",
+    "/Part",
+    "/Part?id={id}",
+    "/PartItem",
+    "/PartItem?id={id}",
+    "/PrintRequirement",
+    "/PrintRequirement?id={id}",
+    "/Users",
+    "/Users?id={id}",
+    "/UserShippingInfo",
+    "/UserShippingInfo?id={id}"
+  ],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}

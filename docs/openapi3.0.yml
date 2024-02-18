@@ -2,7 +2,7 @@ openapi: 3.0.0
 servers:
   # Added by API Auto Mocking Plugin
   - description: API
-    url: http://localhost:7071/api
+    url: https://graph.microsoft.com/User.Read
 info:
   description: This is a simple API
   version: "1.0.0"
@@ -11,7 +11,7 @@ info:
     email: you@your-company.com
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 tags:
   - name: filament
     description: Information about filament
@@ -29,14 +29,14 @@ paths:
         - filament
       summary: Get all filaments
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/FilamentModel'
+                  $ref: "#/components/schemas/FilamentModel"
     post:
       tags:
         - filament
@@ -46,9 +46,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilamentModel'
+              $ref: "#/components/schemas/FilamentModel"
       responses:
-        '201':
+        "201":
           description: Created
   /filament?id={id}:
     get:
@@ -62,12 +62,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FilamentModel'
+                $ref: "#/components/schemas/FilamentModel"
     put:
       tags:
         - filament
@@ -83,11 +83,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilamentModel'
+              $ref: "#/components/schemas/FilamentModel"
       responses:
-        '200':
+        "200":
           description: OK
-        '404':
+        "404":
           description: Not Found
     delete:
       tags:
@@ -100,7 +100,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        "204":
           description: No Content
   /DeliveryBoxPartsInfo:
     get:
@@ -108,14 +108,14 @@ paths:
         - DeliveryBox
       summary: Get all Delivery Box Parts Info
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DeliveryBoxPartsInfoModel'
+                  $ref: "#/components/schemas/DeliveryBoxPartsInfoModel"
     post:
       tags:
         - DeliveryBox
@@ -125,9 +125,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DeliveryBoxPartsInfoModel'
+              $ref: "#/components/schemas/DeliveryBoxPartsInfoModel"
       responses:
-        '201':
+        "201":
           description: Created
   /DeliveryBoxPartsInfo?id={id}:
     get:
@@ -141,12 +141,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeliveryBoxPartsInfoModel'
+                $ref: "#/components/schemas/DeliveryBoxPartsInfoModel"
     put:
       tags:
         - DeliveryBox
@@ -162,9 +162,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DeliveryBoxPartsInfoModel'
+              $ref: "#/components/schemas/DeliveryBoxPartsInfoModel"
       responses:
-        '200':
+        "200":
           description: OK
     delete:
       tags:
@@ -177,22 +177,22 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: Ok  
+        "200":
+          description: Ok
   /FilamentBox:
     get:
       tags:
         - filament
       summary: Get all Delivery Box Parts Info
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/FilamentBoxModel'
+                  $ref: "#/components/schemas/FilamentBoxModel"
     post:
       tags:
         - filament
@@ -202,9 +202,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilamentBoxModel'
+              $ref: "#/components/schemas/FilamentBoxModel"
       responses:
-        '201':
+        "201":
           description: Created
   /FilamentBox?id={id}:
     get:
@@ -218,12 +218,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FilamentBoxModel'
+                $ref: "#/components/schemas/FilamentBoxModel"
     put:
       tags:
         - filament
@@ -239,9 +239,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilamentBoxModel'
+              $ref: "#/components/schemas/FilamentBoxModel"
       responses:
-        '200':
+        "200":
           description: OK
     delete:
       tags:
@@ -254,22 +254,22 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: Ok  
+        "200":
+          description: Ok
   /FilamentBrand:
     get:
       tags:
         - filament
       summary: Get all Delivery Box Parts Info
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/FilamentBrandModel'
+                  $ref: "#/components/schemas/FilamentBrandModel"
     post:
       tags:
         - filament
@@ -279,9 +279,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilamentBrandModel'
+              $ref: "#/components/schemas/FilamentBrandModel"
       responses:
-        '201':
+        "201":
           description: Created
   /FilamentBrand?id={id}:
     get:
@@ -295,12 +295,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FilamentBrandModel'
+                $ref: "#/components/schemas/FilamentBrandModel"
     put:
       tags:
         - filament
@@ -316,9 +316,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilamentBoxModel'
+              $ref: "#/components/schemas/FilamentBoxModel"
       responses:
-        '200':
+        "200":
           description: OK
     delete:
       tags:
@@ -331,22 +331,22 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: Ok  
+        "200":
+          description: Ok
   /Order:
     get:
       tags:
         - order
       summary: Get all
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OrderModel'
+                  $ref: "#/components/schemas/OrderModel"
     post:
       tags:
         - order
@@ -356,9 +356,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OrderModel'
+              $ref: "#/components/schemas/OrderModel"
       responses:
-        '201':
+        "201":
           description: Created
   /Order?id={id}:
     get:
@@ -372,12 +372,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OrderModel'
+                $ref: "#/components/schemas/OrderModel"
     put:
       tags:
         - order
@@ -393,9 +393,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OrderModel'
+              $ref: "#/components/schemas/OrderModel"
       responses:
-        '200':
+        "200":
           description: OK
     delete:
       tags:
@@ -408,8 +408,8 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: Ok  
+        "200":
+          description: Ok
 
   /OrderPart:
     get:
@@ -417,14 +417,14 @@ paths:
         - order
       summary: Get all
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OrderPartModel'
+                  $ref: "#/components/schemas/OrderPartModel"
     post:
       tags:
         - order
@@ -434,9 +434,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OrderPartModel'
+              $ref: "#/components/schemas/OrderPartModel"
       responses:
-        '201':
+        "201":
           description: Created
   /OrderPart?id={id}:
     get:
@@ -450,12 +450,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OrderPartModel'
+                $ref: "#/components/schemas/OrderPartModel"
     put:
       tags:
         - order
@@ -471,9 +471,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OrderPartModel'
+              $ref: "#/components/schemas/OrderPartModel"
       responses:
-        '200':
+        "200":
           description: OK
     delete:
       tags:
@@ -486,8 +486,8 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: Ok  
+        "200":
+          description: Ok
 
   /Part:
     get:
@@ -495,14 +495,14 @@ paths:
         - part
       summary: Get all
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/PartModel'
+                  $ref: "#/components/schemas/PartModel"
     post:
       tags:
         - part
@@ -512,9 +512,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PartModel'
+              $ref: "#/components/schemas/PartModel"
       responses:
-        '201':
+        "201":
           description: Created
   /Part?id={id}:
     get:
@@ -528,12 +528,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartModel'
+                $ref: "#/components/schemas/PartModel"
     put:
       tags:
         - part
@@ -549,9 +549,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PartModel'
+              $ref: "#/components/schemas/PartModel"
       responses:
-        '200':
+        "200":
           description: OK
     delete:
       tags:
@@ -564,23 +564,23 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: Ok  
-          
+        "200":
+          description: Ok
+
   /PartItem:
     get:
       tags:
         - part
       summary: Get all
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/PartItemModel'
+                  $ref: "#/components/schemas/PartItemModel"
     post:
       tags:
         - part
@@ -590,9 +590,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PartItemModel'
+              $ref: "#/components/schemas/PartItemModel"
       responses:
-        '201':
+        "201":
           description: Created
   /PartItem?id={id}:
     get:
@@ -606,12 +606,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PartItemModel'
+                $ref: "#/components/schemas/PartItemModel"
     put:
       tags:
         - part
@@ -627,9 +627,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PartItemModel'
+              $ref: "#/components/schemas/PartItemModel"
       responses:
-        '200':
+        "200":
           description: OK
     delete:
       tags:
@@ -642,23 +642,23 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: Ok  
-          
+        "200":
+          description: Ok
+
   /PrintRequirement:
     get:
       tags:
         - print
       summary: Get all
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/PrintRequirementModel'
+                  $ref: "#/components/schemas/PrintRequirementModel"
     post:
       tags:
         - print
@@ -668,9 +668,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PrintRequirementModel'
+              $ref: "#/components/schemas/PrintRequirementModel"
       responses:
-        '201':
+        "201":
           description: Created
   /PrintRequirement?id={id}:
     get:
@@ -684,12 +684,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PrintRequirementModel'
+                $ref: "#/components/schemas/PrintRequirementModel"
     put:
       tags:
         - print
@@ -705,9 +705,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PrintRequirementModel'
+              $ref: "#/components/schemas/PrintRequirementModel"
       responses:
-        '200':
+        "200":
           description: OK
     delete:
       tags:
@@ -720,8 +720,8 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: Ok  
+        "200":
+          description: Ok
 
   /Users:
     get:
@@ -729,14 +729,14 @@ paths:
         - user
       summary: Get all
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/UserModel'
+                  $ref: "#/components/schemas/UserModel"
     post:
       tags:
         - user
@@ -746,9 +746,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserModel'
+              $ref: "#/components/schemas/UserModel"
       responses:
-        '201':
+        "201":
           description: Created
   /Users?id={id}:
     get:
@@ -762,12 +762,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserModel'
+                $ref: "#/components/schemas/UserModel"
     put:
       tags:
         - user
@@ -783,9 +783,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserModel'
+              $ref: "#/components/schemas/UserModel"
       responses:
-        '200':
+        "200":
           description: OK
     delete:
       tags:
@@ -798,8 +798,8 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: Ok  
+        "200":
+          description: Ok
 
   /UserShippingInfo:
     get:
@@ -807,14 +807,14 @@ paths:
         - user
       summary: Get all
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/UserShippingInfoModel'
+                  $ref: "#/components/schemas/UserShippingInfoModel"
     post:
       tags:
         - user
@@ -824,9 +824,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserShippingInfoModel'
+              $ref: "#/components/schemas/UserShippingInfoModel"
       responses:
-        '201':
+        "201":
           description: Created
   /UserShippingInfo?id={id}:
     get:
@@ -840,12 +840,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserShippingInfoModel'
+                $ref: "#/components/schemas/UserShippingInfoModel"
     put:
       tags:
         - user
@@ -861,9 +861,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserShippingInfoModel'
+              $ref: "#/components/schemas/UserShippingInfoModel"
       responses:
-        '200':
+        "200":
           description: OK
     delete:
       tags:
@@ -876,9 +876,8 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: Ok  
-
+        "200":
+          description: Ok
 
 components:
   schemas:
@@ -892,11 +891,11 @@ components:
         userID:
           type: string
         deliveryBoxType:
-          $ref: '#/components/schemas/DeliveryBoxType'
+          $ref: "#/components/schemas/DeliveryBoxType"
         shippingNumber:
           type: string
         orderPartBookingStatus:
-          $ref: '#/components/schemas/OrderPartBookingStatus'
+          $ref: "#/components/schemas/OrderPartBookingStatus"
         count:
           type: number
 
@@ -954,16 +953,16 @@ components:
           type: string
 
     FilamentModel:
-        type: object
-        properties:
-          id:
-            type: string
-          title:
-            type: string
-          brandId:
-            type: string
-          filamentType:
-            $ref: '#/components/schemas/FilamentType'
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        brandId:
+          type: string
+        filamentType:
+          $ref: "#/components/schemas/FilamentType"
 
     OrderPartBooking:
       type: object
@@ -1012,7 +1011,7 @@ components:
         - Active
         - Cancelled
         - Completed
-        
+
     FilamentBoxModel:
       type: object
       properties:
@@ -1024,7 +1023,7 @@ components:
           type: number
         price:
           type: number
-          
+
     FilamentBrandModel:
       type: object
       properties:
